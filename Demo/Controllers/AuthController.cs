@@ -63,27 +63,6 @@ namespace Demo.Controllers
                 return Ok(new { tokenString , userId});
             else
                 return Unauthorized();
-
-            /*  if (User == null)
-                   return BadRequest("Invalid Client Request");
-              else 
-              {
-                  var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-                  var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-
-
-
-                  var tokenOptions = new JwtSecurityToken(
-                  issuer: "https://localhost:44392",
-                  audience: "https://localhost:44392",
-                  claims: new List<Claim>(),
-                  expires: DateTime.Now.AddMinutes(5),
-                  signingCredentials: signinCredentials
-                  );
-                  var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                  return Ok(new { Token = tokenString });
-              }
-              return Unauthorized();*/
         }
     }
 }

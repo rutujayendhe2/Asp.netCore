@@ -21,6 +21,7 @@ namespace Sabji_MartDbContext
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Productlist> Productlists { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

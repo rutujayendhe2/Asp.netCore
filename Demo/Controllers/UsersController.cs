@@ -49,6 +49,8 @@ namespace Demo.Controllers
             else
             {
                 user.Password = EncDscPassword.EncryptPassword(user.Password);
+                user.ConfirmPassword = EncDscPassword.EncryptPassword(user.ConfirmPassword);
+
                 context.Users.Add(user);
                 context.SaveChanges();
                 return Ok(new
