@@ -61,7 +61,7 @@ export class OrderComponent implements OnInit {
       country: this.order.country,
       status: this.order.status,
       totalprice: this.order.totalprice,
-      userId:localStorage.getItem("UserId")
+      userId:sessionStorage.getItem("UserId")
     };
 
     this.orderservice.createOrder(data)

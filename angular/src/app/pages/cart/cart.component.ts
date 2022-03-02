@@ -18,6 +18,11 @@ export class CartComponent implements OnInit {
       this.products = res;
       this.grandtotal = this.cartService.getTotalPrice();
     })
+    // this.cartService.getProductsById()
+    // .subscribe((res:any)=>{
+    //   this.products = res;
+    //   this.grandtotal = this.cartService.getTotalPrice();
+    // })
   }
   removeItem(item : any){
     // console.log(item);

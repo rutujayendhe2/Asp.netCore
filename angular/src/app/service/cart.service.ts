@@ -6,13 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class CartService {
+  
 
   public cartItemList : any = [];
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
   constructor() { }
-
+  
   getCartList(){
     return this.cartItemList.asObservable();
   }
@@ -29,6 +30,7 @@ export class CartService {
 
   addtoCart(product : any,pQuantity:number){
     const _product={product:product,quantity:pQuantity};
+    console.log(_product);
     this.cartItemList.push(_product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
@@ -38,7 +40,7 @@ export class CartService {
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
       const q:number=parseInt(a.quantity );
-        grandTotal += a.product.total*q;
+        grandTotal += a.product.price*q;
     })
     return grandTotal;
   }

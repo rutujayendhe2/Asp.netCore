@@ -46,13 +46,14 @@ import { FilterPipe } from './shared/filter.pipe';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthguardService } from './service/authguard.service';
 import { AuthInterceptor } from './authInterceptor';
-import { ViewProductComponent } from './pages/view-product/view-product.component';
+import { ViewproductComponent } from './pages/viewproduct/viewproduct.component';
+import { RouterModule } from '@angular/router';
 
 
 // import { MatFormFieldModule } from '@angular/material/form-field/form-field-module';
 export function tokenGetter(){
 
-  return localStorage.getItem("jwt");
+  return sessionStorage.getItem("jwt");
 
 }
 
@@ -81,8 +82,8 @@ export function tokenGetter(){
     CartComponent,
     PaymentComponent,
     FilterPipe,
-    ViewProductComponent
-  ],
+    ViewproductComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -103,8 +104,8 @@ export function tokenGetter(){
     MatListModule, 
     MatExpansionModule,
     BrowserAnimationsModule,
-    JwtModule
-
+    JwtModule,
+    RouterModule
 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],

@@ -30,7 +30,7 @@ export class AuthguardService {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-   const token=localStorage.getItem("jwt");
+   const token=sessionStorage.getItem("jwt");
 
    if(token && this.jwtHelper.isTokenExpired(token))
 

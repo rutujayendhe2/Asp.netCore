@@ -33,8 +33,10 @@ export class LoginComponent implements OnInit {
      
 
 
-      localStorage.setItem("jwt",token);
-      localStorage.setItem("UserId",userId);
+      // localStorage.setItem("jwt",token);
+      // localStorage.setItem("UserId",userId);
+      sessionStorage.setItem("UserId",userId);
+      sessionStorage.setItem("UserId",userId);
 
        this.isvalidlogin=true;
 

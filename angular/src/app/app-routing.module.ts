@@ -18,6 +18,8 @@ import { OrderComponent } from './pages/order/order.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { AuthguardService } from './service/authguard.service';
+import { ViewproductComponent } from './pages/viewproduct/viewproduct.component';
+import { SliderComponent } from './pages/slider/slider.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -39,9 +41,12 @@ const routes: Routes = [
 //  {path:'products',component:ProductComponent},
   {path:'products',component:ProductComponent,canActivate:[AuthguardService]},
   {path:'cart',component:CartComponent},
+  {path:'viewproduct/:id',component:ViewproductComponent},
+
 
   {path:'order',component:OrderComponent},
   {path:'payment',component:PaymentComponent},
+  {path:"slider",component:SliderComponent},
 
 
 

@@ -1,0 +1,30 @@
+
+<div class="container mt-5 mb-5" style="background-color: #f3ffe6;">
+    <div class="row justify-content-center">
+      <!-- <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'"> -->
+        <div class="card col-3" style="background-color: #daffb3;">
+          <img src="{{productList.image}}" alt="ProductListImage">
+          <h3><strong>Title : </strong>{{productList.title}}</h3>
+          <p><strong>Category : </strong>{{productList.category}}</p>
+          <p style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Description :
+            </strong>{{productList.description}}</p>
+          <p><strong>Price : </strong>{{productList.price|currency : 'INR'}}</p>
+          <span><strong>Quantity : in /Kg</strong> </span><br>
+          <select name="pQuantity" [(ngModel)]="pQuantity" id="" class="form-control" style="width: 95%;">
+            <option selected value="select" disabled class="text-primary">Select min - 1 | max - 5 </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <br>
+          <button class="btn btn-success mt-3 mb-3" (click)=addtocart(productList,pQuantity)>Add to cart</button>
+          <button routerLink="/home" class="btn btn-primary mt-3 mb-3">Shop More</button><br>
+
+        </div>
+      <!-- </ng-container> -->
+    </div>
+  </div>
+  
+  

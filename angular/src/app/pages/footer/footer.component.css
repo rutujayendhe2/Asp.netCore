@@ -1,13 +1,14 @@
 .footer{
-	background-color: White;
+	background-color: rgb(17, 16, 16);
  padding-top: 40px;
-	color: white;
+	color: rgb(10, 10, 10);
   height: 40%;
+  
 
   position: bottom;
 }
 
 .footer a{
-  color: white;
+  color: rgb(15, 14, 14);
   padding-left: 15px;
 }

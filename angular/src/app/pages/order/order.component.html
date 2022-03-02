@@ -104,26 +104,26 @@
           </div>
 
         <div class="h4 pt-3">
-          <table class="table table-responsive" style="border: 1px solid black">
+          <table class="table table-responsive " style="border: 1px solid black, text-center; padding-left:50px">
             <thead>
               <tr>
-                <th><h2><b> Product Name</b></h2></th>
-                <th><h2><b> Quantity</b></h2></th>
-                <th><h2><b> Total</b></h2></th>
+                <th><h3><b> Product Name</b></h3></th>
+                <th><h3><b> Quantity</b></h3></th>
+                <th><h3><b> Total</b></h3></th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let i of productList">
-                <td>{{ i.product.title }}</td>
-                <td>{{ i.quantity }}</td>
-                <td>{{ i.product.price * i.quantity }}</td>
+                <td><h3>{{ i.product.title }}</h3></td>
+                <td><h3>{{ i.quantity }}</h3></td>
+                <td><h3>{{ i.product.price * i.quantity }}</h3></td>
               </tr>
               <br />
               <tr>
                 <td *ngIf="grandTotal > 0">
-                  <h3>
+                  <h2>
                     <strong> Grand Total : {{ grandTotal }} </strong>
-                  </h3>
+                  </h2>
                 </td>
               </tr>
             </tbody>
@@ -131,9 +131,9 @@
         </div>
 
         <div class="h4 pt-3">
-          <span>Payment Method</span>
+          <span style="padding-left:50px">Payment Method</span>
           <div class="d-flex align-items-center py-2">
-            <div class="display-5">
+            <div class="display-5" style="padding-left:50px">
               <mat-checkbox [ngModel]="myModel" class="example-margin">
                 <label>Cash On Delivery</label>
               </mat-checkbox>
@@ -149,7 +149,7 @@
                 <button (click)="emptycart()" routerLink="/home" class="btn btn-danger">
                   Cancel
                 </button>
-                <button routerLink="/products" class="btn btn-primary">
+                <button routerLink="/home" class="btn btn-primary">
                   Shop More
                 </button>
               </div>
