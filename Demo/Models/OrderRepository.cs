@@ -1,4 +1,5 @@
-﻿using Sabji_MartDbContext;
+﻿using Microsoft.EntityFrameworkCore;
+using Sabji_MartDbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,9 +72,13 @@ namespace Demo.Models
             return context.Orders.FirstOrDefault(t => t.Id == id);
         }
 
+
+
+        
+
         public void UpdateOrderRecord(Order order)
         {
-            context.Orders.Update(order);
+            context.Entry<Order>(order).State = EntityState.Modified;
             context.SaveChanges();
         }
 

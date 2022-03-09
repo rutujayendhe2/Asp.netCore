@@ -20,6 +20,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { AuthguardService } from './service/authguard.service';
 import { ViewproductComponent } from './pages/viewproduct/viewproduct.component';
 import { SliderComponent } from './pages/slider/slider.component';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'admin-product',component:AdminProductComponent},
   {path: 'admin-home',component:AdminHomeComponent},
   {path: 'admin-dashboard',component:AdminDashboardComponent},
+  {path: 'update-product/:id',component:UpdateProductComponent},
 
 
   {path:'',redirectTo:'products',pathMatch:'full'},

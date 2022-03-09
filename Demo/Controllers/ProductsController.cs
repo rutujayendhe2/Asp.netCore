@@ -35,12 +35,7 @@ namespace Demo.Controllers
 
 
 
-        [HttpPost]
-        //public IActionResult AddProductlist(Productlist productlist)
-        //{
-        //    return Ok(repository.AddProductlist(productlist));
-
-        //}
+    
 
         public IActionResult Create(Productlist productlist)
         {

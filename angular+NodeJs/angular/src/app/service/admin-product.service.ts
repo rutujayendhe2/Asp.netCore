@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { UpdateProductComponent } from '../pages/update-product/update-product.component';
 // import { IProduct } from '../pages/admin-product/IProduct';
 
 @Injectable({
@@ -25,19 +26,6 @@ export class AdminProductService {
  
 
 
-  // createProduct(Products1: any):Observable<any>{
-  //   console.log(Products1);
-  //   return this.httpclient.post<any>
-  //   ('https://localhost:44362/api/Products',Products1);  
-  //   //  return this.httpclient.post<any>( `https://localhost:44392/api/Products1`, Products1)
-  //   // .subscribe({
-  //   //   next: (res) => {
-  //   //     console.log(res);
-  //   //   },
-  //   //   error: (e) => console.error(e)
-  //   // });
- 
-  // }
   
 
   delete(id: number):Observable<any>{
@@ -50,9 +38,23 @@ export class AdminProductService {
     .pipe(map((resp:any)=>{
       return resp;
    }))
+  }
 
+   UpdateProduct(id:Number,title:String,price:Number,description:String,category:String,image:String)
+   {
+      const products={Id:id,Title:title,Price:price,Description:description,Category:category,Image:image};
+       //console.log(products);
+      return this.httpclient.put<any>('https://localhost:44362/api/Products',products)
+        .pipe(map((res:any)=>{
+          return res;
+        }))
+           
+  
+  }
 
- }
+  
+
+ 
 
 }
 

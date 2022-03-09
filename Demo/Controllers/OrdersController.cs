@@ -23,13 +23,9 @@ namespace Demo.Controllers
             var order2 = repository.GetOrderRecord();
 
             return Ok(order2);
-            //return JsonConvert.DeserializeObject<List<Order>>(order2);
         }
 
-        //public IEnumerable<Order> Get()
-        // {
-        //  return _orderdata.GetOrderRecord();
-        // }
+
 
 
 
@@ -41,28 +37,7 @@ namespace Demo.Controllers
 
         }
 
-        //[HttpPost]
-        //public IActionResult Create([FromBody] Order order)
-        //{
-        // var order1 = new Order();
-        //order1.fullname = order.fullname;
-        //order1.address = order.address;
-        //order1.city = order.city;
-        // order1.country = order.country;
-        // order1.email = order.email;
-        // order1.phone = order.phone;
-        // order1.state = order.state;
-        // order1.status = order.status;
-        // order1.totalprice = order.totalprice;
-        // order1.updatedAt = order.updatedAt;
-        // order1.createdAt = order.createdAt;
-        // order1.zip = order.zip;
-        //order1.user = order.user;
-        //order1.productList = order.productList;
-        //_orderdata.AddOrderRecord(order);
-        //return Ok();
-
-        //}
+        
         [HttpPut]
         public IActionResult Edit([FromBody] Order order)
         {

@@ -96,13 +96,14 @@
           <td>{{ product.price }}</td>
           <td>{{ product.description }}</td>
           <td>{{ product.category }}</td>
-          <td>{{ product.image }}</td>
+          <td><img src=' {{product.image }}' height="100" width="100"></td>
           <td>
             <!-- <button type="button" (click)="onEdit(data)" data-toggle="modal" data-target="#exampleModal"  class="btn btn-info">Edit</button> -->
 
-            <!-- <a  [routerLink]="['/Products/',product.id,'UpdateDetails']" class="btn btn-primary"> <i class="material-icons">edit</i></a> &nbsp; -->
+            <a  routerLink="/update-product/{{product.id}}" class="btn btn-primary"> <i class="material-icons">edit</i></a> &nbsp;
             <button type="submit" (click)="deleteProduct(product.id)" class="btn btn-danger delete btn"><i class="material-icons">delete</i></button>
           </td>
+          
 
           <hr/>
         </tr>

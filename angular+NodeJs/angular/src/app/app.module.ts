@@ -48,6 +48,7 @@ import { AuthguardService } from './service/authguard.service';
 import { AuthInterceptor } from './authInterceptor';
 import { ViewproductComponent } from './pages/viewproduct/viewproduct.component';
 import { RouterModule } from '@angular/router';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
 
 
 // import { MatFormFieldModule } from '@angular/material/form-field/form-field-module';
@@ -83,6 +84,7 @@ export function tokenGetter(){
     PaymentComponent,
     FilterPipe,
     ViewproductComponent,
+    UpdateProductComponent
     ],
   imports: [
     BrowserModule,
