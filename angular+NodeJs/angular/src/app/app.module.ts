@@ -18,7 +18,6 @@ import { FrontendDashboardComponent } from './pages/frontend-dashboard/frontend-
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { AdminHeaderComponent } from './pages/admin-header/admin-header.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
-// import { AdminUserComponent } from './pages/admin-user/admin-user.component';
 import { AdminOrderComponent } from './pages/admin-order/admin-order.component';
 import { AdminProductComponent } from './pages/admin-product/admin-product.component';
 import { AdminUserComponent } from './pages/admin-user/admin-user.component';
@@ -49,6 +48,7 @@ import { AuthInterceptor } from './authInterceptor';
 import { ViewproductComponent } from './pages/viewproduct/viewproduct.component';
 import { RouterModule } from '@angular/router';
 import { UpdateProductComponent } from './pages/update-product/update-product.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 // import { MatFormFieldModule } from '@angular/material/form-field/form-field-module';
@@ -107,7 +107,8 @@ export function tokenGetter(){
     MatExpansionModule,
     BrowserAnimationsModule,
     JwtModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
 
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],

@@ -69,7 +69,9 @@
 
 <div class="container-fluid" style="background-color: #f3ffe6;">
   <div class="row">
-    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'| paginate :{id:'listing',
+     itemsPerPage:3,currentPage:page,totalItems:totalRecords}">
+
       <div class="card col-3" style="background-color: #daffb3;">
         <img src="{{item.image}}" alt="ProductListImage">
         <h3><strong>Title : </strong>{{item.title}}</h3>
@@ -88,7 +90,17 @@
         </select> -->
         <button class="btn btn-success" [routerLink]="['/viewproduct',item.id]">View Product</button>
       </div>
+
     </ng-container>
+  </div>
+
+    <div class="row justify-content-center mt-5">
+
+      <div class="col-md-6">
+
+          <pagination-controls class="text-center" id="listing"  (pageChange)="page=$event"></pagination-controls>
+
+      </div>
   </div>
 </div>
 

@@ -15,6 +15,10 @@ export class ProductComponent implements OnInit {
   searchKey:string="";
   public filterCategory : any;
   pQuantity:any;
+  page:string|number=1;
+
+  totalRecords:string | number | undefined;
+
 
 // To inject api service that is crreated
   constructor(private api : ApiService, private  cartService : CartService) { }
